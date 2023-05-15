@@ -1,0 +1,23 @@
+import java.time.LocalDate;
+
+public class Main {
+    public static void main(String[] args) {
+        // Create products
+        Product product1 = new Product("P1", "Product 1", 10.99);
+        Product product2 = new Product("P2", "Product 2", 5.99);
+
+        // Create an order
+        Order order = new Order(1, LocalDate.now());
+
+        // Add line items to the order
+        order.addLineItem(product1, 3);
+        order.addLineItem(product2, 2);
+
+        // Calculate total charge
+        double totalCharge = order.calcTotalCharge();
+
+        // Print order details
+        System.out.println(order);
+        System.out.println("Total Charge: $" + totalCharge);
+    }
+}
